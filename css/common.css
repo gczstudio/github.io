@@ -1,0 +1,48 @@
+html,
+body {
+    min-width: 320px;
+    font-family: "Microsoft YaHei";
+}
+a{ text-decoration: none; }
+a:hover{text-decoration: none;}
+.tips { text-align: center; font-size: 16px; color: red; display: none; }
+
+/*.row {*/
+    /*margin-right: 0px;*/
+    /*margin-left: 0px;*/
+/*}*/
+header {
+    height: 45px;
+    line-height: 45px;
+    background-color: #31b0d5;
+    padding: 0 10px;
+    text-align: center;
+    position: relative;
+    z-index: 300;
+    font-size: 24px;
+}
+header .title {
+    color: #fff;
+}
+header a {
+    float: left;
+}
+header a span {
+    color: #fff;
+}
+a {
+    color: #323232;
+    display: block;
+}
+section {
+    margin-top: 10px;
+    padding: 0 10px 0 10px;
+}
+
+.loading {
+    text-align: center;
+}
+
+.sendmessage{ 
+    margin-top: 20px;
+}

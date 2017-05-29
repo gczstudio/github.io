@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>代理奖励说明</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <style type="text/css">
+    a {
+        color: #323232;
+        display: block;
+    }
+    .row{margin: 0;}
+    .balance { background-color: #eee; height: 60px; line-height: 60px; font-size: 20px; margin-bottom: 10px; text-align: center;font-size: 20px;}
+
+    .list-group li { height: 40px; font-size: 16px; }
+    .list-group li p { margin-left: 5%; padding-top: 10px; }
+    .list-group li p span { float: right; padding-right: 5%; }
+</style>
+</head>
+<body>
+    
+<header>
+    <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+    <!--<a style="" href="http://fx.jinkagame.com/"><span class="glyphicon glyphicon-menu-left"></span></a>-->
+    <span class="title">代理奖励说明</span>
+    <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
+</header><section id="wrapper">
+    <form id="card-buy-form" class="form-horizontal" action="/distribution/user/award" method="post">
+    <div class="row balance">
+        新代理注册奖励
+    </div>
+    <ul class="list-group payway">
+        <li>
+            <p type="2">奖励：<span>500.00元</span></p>
+        </li>
+        <li>
+            <p type="2">奖励规则：<span>即刻注册成为新代理即送</span></p>
+        </li>
+        <li>
+            <p type="2">提现规则：<span>销售玉达到9000个即可随时提现</span></p>
+        </li>
+    </ul>
+</section>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+
+<script type="text/javascript">
+    $('#btnWithdraw').on('click', function() {
+        //window.location.href = "http://fx.jinkagame.com/distribution/user/balance-explain";
+        window.location.href = "http://fx.jinkagame.com/distribution/account/index";
+    })
+
+    var account = "";
+    if (account == '0') {
+        $('#myModal').modal('show');
+    }
+    $('#cancel').on('click', function() {
+        $('#myModal').modal('hide');
+    })
+    $('#bind').on('click', function() {
+        window.location.href = '/distribution/account/add';
+    })
+
+//
+//    $('.card').find('div').on('click', function(){
+//        $(this).addClass('act').siblings().removeClass('act');
+//        $(this).find('input[type=radio]').prop("checked", true);
+//    }).eq(0).trigger('click');
+//
+//    $('.payway li').find('p').on('click', function() {
+//        window.location.href = createBalanceListUrl($(this).attr('type'));
+//    })
+</script>
+</body>
+</html>

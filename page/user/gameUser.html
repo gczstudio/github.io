@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>我的玩家</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <style type="text/css">
+        .row {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        .row .nav {
+            text-align:center;
+            padding-right:0px;
+            padding-top: 10px;
+            border-bottom: solid 1px #E8E8E8;
+            border-right: solid 1px #E8E8E8;
+            height: 50px;
+            font-size: 20px;
+        }
+        .list {
+            font-size: 16px;
+            border-bottom: solid 1px #E8E8E8;
+            padding-bottom: 5px;
+            padding-top: 10px;
+            text-align: center;
+        }
+        .list div {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .list .btn-default {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+        <span class="title">我的玩家</span>
+        <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
+    </header>
+    <div class="row">
+        <input type="hidden" id="hidPage" value="1">
+        <div class="col-xs-6 nav" order="1">
+            <p>玉充值数量</p>
+        </div>
+        <div class="col-xs-6 nav" style="border-right: none;" order="1">
+            <p>注册时间</p>
+        </div>
+    </div>
+    <div class="row balance" style="text-align: center;">
+        <input type="text" id="account" style="width: 70%;" placeholder="可输入游戏ID">
+        <button type="button" id="search">查询</button>
+    </div>
+    <section id="list">
+        <div class="row list">
+            <div class="col-xs-3">
+                <img user_id="583688" src="../../image/tx.jpg" class="img-rounded" width="50" height="50">
+            </div>
+            <div class="col-xs-3">
+                <p>583688</p>
+                <p>0个玉</p>
+            </div>
+            <div class="col-xs-6">
+                <p>🌟 🌟 </p>
+                <p>1970-01-01</p>
+            </div>
+        </div>
+    </section>
+ 
+</body>
+</html>
+ <script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>

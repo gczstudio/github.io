@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>首页</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <style type="text/css">
+    header {height: 80px;line-height: 80px;background-color: #31b0d5;padding: 0 10px;text-align: center;position: relative;z-index: 300;font-size: 29px;font-weight: bold;color: #fff;}
+    .row{margin: 0;}
+    .header-info { height: 90px;}
+    .nav {border: solid 1px #E8E8E8;height: 68px;padding-top: 3px;}
+    .nav p:first-child { font-size: 20px; color: #ff6418; }
+    .nav p:last-child { font-size: 16px; color: black;}
+    .list-group { margin-bottom: 0px; font-size: 20px;}
+    .list-group-item { height: 60px; padding-top: 15px;}
+    .list-group-item span:first-child { float: left; padding-right: 10px; padding-top: 5px; color: #31b0d5;}
+    .list-group-item span:last-child { float: right; padding-top: 5px; color: #c6c6c6;}
+    .list-group-item .content { font-size: 20px; color: black;}
+    a { color: #323232; display: block; text-decoration: none;}
+
+    .row .nav { text-align:center; padding-right:0px;}
+    .row .nav p:first-child{ font-weight:bold; margin-top:5px;}
+    .row .nav p { margin:0;}
+    .space { height: 15px; background-color: #f2f2f4;}
+    /*#myModalmonday .modal-dialog{margin: 30px;}*/
+    .js{font-size: 16px;height: 400px;}
+    .js h3{margin-bottom: 20px;}
+    .js_title{text-align: center}
+    .center{text-align: center;}
+    .lheight{ height: 40px;line-height: 40px;}
+    .red{color: red}
+    .btn-lg{margin: 20px;}
+    .suojin{text-indent:2em}
+    .js_je{display: block;width: 150px;height: 60px;border: 1px solid #8c8c8c;margin: 10px auto;line-height: 60px;}
+    .header_msg{float: right; margin-top: 20px;}
+    .img-rounded{margin-top: 10px;}
+    .text-top{margin-top: 10px; font-size: 20px; color: black;}
+    .text-bot{margin-bottom: 0px; font-size: 18px; color: #8A8888;}
+    .ewm{float: right;margin-right: -2px;margin-top: 40px; font-size: 16px; color: #F99979;}
+    .header_img{position: relative;
+    }
+    .userLevel{position: absolute; top:10px; left:105px; width: 80px; height: 50px;}
+    footer{text-align: center;padding-top: 20px; font-size: 16px; color:#a9a9a9;}
+</style>
+</head>
+<body>
+    <header>
+        <p class="text-center">小吆分销系统
+            <span class="badge header_msg">0</span>
+            <span class="glyphicon glyphicon-envelope header_msg" id="message"></span>
+        </p>
+    </header>
+    <div class="row header-info">
+        <div class="col-xs-6 header_img">
+            <img src="./image/tx.jpg" alt="" class="img-rounded" width="80" height="80">
+            <div class="userLevel">
+                <p class="text-top" ><b>天蝎座</b></p>
+                <p class="text-bot" >大咖一级</p>
+            </div>
+        </div>
+       
+        <div class="col-xs-6 ">
+            <a class="btn btn-default ewm" href="./page/user/myCode.html" role="button">我的二维码</a>
+        </div>
+    </div>
+    <br>
+    <div class="row header-nav">
+        <div class="col-xs-4 nav" style="border-right: none" id="card">
+            <a href="./page/user/card.html">
+                <p>666</p>
+                <p>今日售出玉</p>
+            </a>        
+        </div>
+        <div class="col-xs-4 nav" style="border-right: none" id="balance">
+            <a href="./page/user/balance.html">
+                <p>￥<span>7332.5</span></p>
+                <p>代理提成</p>
+            </a>    
+        </div>
+        <div class="col-xs-4 nav" id="proxy">
+            <a href="./page/user/proxyManager.html">
+                <p><span>6</span>人</p>
+                <p>我的代理</p>
+            </a>        
+        </div>
+    </div>
+    <div class="row space"></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="http://fx.jinkagame.com/distribution/user/downapp">
+                <span class="glyphicon glyphicon-arrow-down"></span>
+                <content>下载新分销</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="./page/agent.html">
+                <span class="glyphicon glyphicon-tag"></span>
+                <content>下级代理授权</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="./page/account/recharge.html">
+                <span class="glyphicon glyphicon-usd"></span>
+                <content>充值查询</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="./page/user/backnew.html">
+                <span class="glyphicon glyphicon-pencil"></span>
+                <content>返现明细查询</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="./page/user/proxy.html">
+                <span class="glyphicon glyphicon-list-alt"></span>
+                <content>我的代理(6人)</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="./page/user/player.html">
+                <span class="glyphicon glyphicon-user"></span>
+                <content>我的玩家(42人)</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="./page/user/activities.html">
+                <span class="glyphicon glyphicon-volume-up"></span>
+                <content>推广活动</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="" target="_blank">
+                <span class="glyphicon glyphicon-headphones"></span>
+                <content>客服咨询</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <div class="row space"></div>
+
+        <li class="list-group-item">
+            <a href="./page/user/info.html">
+                <span class="glyphicon glyphicon-wrench"></span>
+                <content>个人信息</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="./page/login.html">
+                <span class="glyphicon glyphicon-off"></span>
+                <content>退出</content>
+                <span class="glyphicon glyphicon-menu-right"></span>
+            </a>
+        </li>
+    </ul>
+    <div class="row space"></div>
+    <footer style="">
+        <p><b style="font-size: 25px; color: #000;">小吆游戏</b></p>
+        <p>根据国家法律规定<br>代理提成需缴纳个人所得税</p>
+        <p>湘ICP备14013076号-1 小吆版权所有</p>
+    </footer>
+   
+</body>
+</html>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>首页</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        html,body {height: 100%;}
+        body{ background-color: #ddd; }
+        .box { margin: 0 auto; width: 100%; background-color: #ddd; padding-top: 50px;}
+        .login-box { max-width:500px; margin: 0 auto; }
+        .form { width: 100%; max-width:500px; margin: 25px auto 0px auto;}
+        .login-content { width: 100%; max-width:500px; background-color: rgba(255, 250, 2550, .6);}
+        .input-group { margin: 0px 0px 0px 0px !important;}
+        .form-control,.input-group {height: 40px;}
+        .form-group { margin-bottom: 0px !important; padding-bottom: 20px;}
+        .login-title { padding: 20px 10px; background-color: #31b0d5;}
+        .login-title h1 { margin-top: 10px !important;}
+        .login-title small { color: #fff;}
+        .link p {line-height: 20px;margin-top: 30px;}
+        .btn-sm { padding: 8px 24px !important;font-size: 16px !important;}
+        .tips { font-size: 14px; color: red; height: 30px; width: 100%; padding-top: 8px;}
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div class="login-box">
+        <div class="login-title text-center">
+            <h1><small>小吆分销系统</small></h1>
+        </div>
+        <div class="login-content ">
+            <div class="form">
+                <!-- <form id="register-form" action="/passport/register" method="post"> -->
+                <!-- <input type="hidden" name="_csrf" value="OU1zbHB6RFVvOkYvBjIDAWArBhoBCxwlWjcdIUAqMw1LfCM6KAh3Zw=="> -->
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                            <input type="text" id="parentCode" name="parentCode" class="form-control" placeholder="邀请人游戏ID">
+                        </div>
+                        <div class="tips">
+                            <span id="parentCode_error_msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                            <input type="text" id="gameUserId" name="gameUserId" class="form-control" placeholder="自己的游戏ID">
+                        </div>
+                        <div class="tips">
+                            <span id="gameUserId_error_msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" id="phoneNum" name="phoneNum" class="form-control" placeholder="手机号">
+                        </div>
+                        <div class="tips">
+                            <span id="phoneNum_error_msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" id="verifyCode" name="verifyCode" class="form-control" placeholder="验证码" style="width: 65%;">
+                            <img id="imgVerifyCode" onclick="changeVerifyCode()"  alt="验证码" style="cursor: pointer; margin-left: 10px; float:right">
+                        </div>
+                        <div class="tips">
+                            <span id="verifyCode_error_msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group" style="width: 100%">
+                        <input type="button" id="btnSendCode" class="btn btn-sm btn-info" value="获取验证码" style="width: 100%" onclick="sendMessage()">
+                        </div>
+                        <div class="tips">
+                            <span id="verifyCodehq_error_msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" id="verifyCodemb" name="verifyCodemb" class="form-control" placeholder="手机验证码">
+                        </div>
+                        <div class="tips">
+                            <span id="verifyCodemb_error_msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="密码">
+                        </div>
+                        <div class="tips">
+                            <span id="password_error_msg"> </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-check"></span></span>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="确认密码">
+                        </div>
+                        <div class="tips">
+                            <span id="confirmPassword_error_msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="text-align: center;">
+                    <input type="checkbox" id="isRead" checked>
+                    <a id="pass">我已阅读并同意《用户代理协议》</a>
+                </div>
+                <input type="hidden" name="" id="read" value="0">
+                <!-- </form> -->
+            </div>
+        </div>
+        <div class="form-group form-actions" style="overflow: hidden;">
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" id="btnSubmitRegister" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 注册</button>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">已有账号？<a href="./login.html">立即登录</a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script>
+    $('#btnSubmitRegister').click(function(){
+         var parentCode = $('#parentCode').val();
+         var gameUserId = $('#gameUserId').val();
+         var phoneNum = $('#phoneNum').val();
+         var verifyCodemb = $('#verifyCodemb').val();
+         var password = $('#password').val();
+         var confirmPassword = $('#confirmPassword').val();
+
+         if(parentCode == ''){
+            $('#parentCode_error_msg').html('代理注册码不能为空');
+            $('#parentCode').focus();
+            onlyOneShow('parentCode');
+            return;
+         }else{
+            $('#parentCode_error_msg').html('');
+            // $.ajax('xxx',{},function(){
+            //     //这里还需要判断一下上级代理是否存在？？？？？
+            // })
+         }
+         if(gameUserId == ''){
+            $('#gameUserId_error_msg').html('游戏ID不能为空');
+            $('#gameUserId').focus();
+            onlyOneShow('gameUserId');
+            return;
+         }else{
+            $('#gameUserId_error_msg').html('');
+            // $.ajax('xxx',{},function(){
+            //     //这里还需要判断一下游戏ID是否存在？？？？？
+            // })
+         }
+         if(!checkPhoneNum(phoneNum)) return;
+
+         if(verifyCodemb == ''){
+            $('#verifyCodemb_error_msg').html('手机验证码不能为空');
+            $('#verifyCodemb').focus();
+            onlyOneShow('verifyCodemb');
+            return;
+         }else{
+            $('#verifyCodemb_error_msg').html('');
+
+         }
+
+         if(password == ''){
+            $('#password_error_msg').html('密码不能为空');
+            $('#password').focus();
+            onlyOneShow('password');
+            return;
+         }else if(password.length<6 || password.length>16){
+            $('#password_error_msg').html('请输入6-16位的密码');
+            $('#password').focus();
+            onlyOneShow('password');
+            return;
+         }else{
+            $('#password_error_msg').html('');
+         }
+
+         if(confirmPassword == ''){
+            $('#confirmPassword_error_msg').html('请再次输入密码');
+            $('#confirmPassword').focus();
+            onlyOneShow('confirmPassword');
+            return;
+         }else if(password != confirmPassword){
+
+            $('#confirmPassword_error_msg').html('两次输入密码不一致,请重新输入');
+            $('#confirmPassword').focus();
+            onlyOneShow('confirmPassword');
+            return;
+         }else{
+            $('#confirmPassword_error_msg').html('');
+         }
+
+         
+         //验证是否勾选协议
+         if(!$('#isRead').prop('checked')){
+            $('#confirmPassword_error_msg').html('请勾选协议');
+            return;
+         }else{
+            $('#confirmPassword_error_msg').html('');
+         }
+
+
+    })
+   
+    //发送验证码
+    var isClick = true;
+    function sendMessage(){
+
+        if(!isClick) return;
+
+        var phoneNum = $('#phoneNum').val();
+        var verifyCode = $('#verifyCode').val();
+        if(!checkPhoneNum(phoneNum)) return;
+        if(verifyCode == ''){
+            $('#verifyCode_error_msg').html('图形验证码不能为空');
+            $('#verifyCode').focus();
+            onlyOneShow('verifyCode');
+            return;
+        }
+        $('#verifyCode_error_msg').html('');
+
+
+        $('#verifyCodehq_error_msg').html('短信验证码已发送至您的手机，请注意查收！')
+        var currTime = 60;
+        var time = null;
+        time = setInterval(function(){
+            isClick = false;
+            currTime--;
+            $('#btnSendCode').val('倒计时'+(currTime>=10?currTime:'0'+currTime.toString())+'s');
+            if(currTime<=0){
+                isClick = true;
+                $('#btnSendCode').val('重新获取');
+                $('#verifyCodehq_error_msg').html('');
+                clearInterval(time);
+            }
+        },1000)
+
+        
+
+        // $.ajax('xxx',{},function(){
+        //     //请求验证码接口
+        //     if(data.code == 0){
+
+        //     }
+        // })
+
+    }
+
+
+    //图形验证码
+    function changeVerifyCode(){
+
+    }
+
+    //验证手机号
+    function checkPhoneNum(phoneNum){
+        if(phoneNum == ''){
+            $('#phoneNum_error_msg').html('手机号不能为空');
+            $('#phoneNum').focus();
+            onlyOneShow('phoneNum');
+            return false;
+        }
+
+        if(!(/^1[34578]\d{9}$/.test(phoneNum))){
+            $('#phoneNum_error_msg').html('请输入正确的手机号');
+            $('#phoneNum').focus();
+            onlyOneShow('phoneNum');
+            return false;
+        }
+        $('#phoneNum_error_msg').html('');
+        return true;
+    }
+
+    //错误提示
+    function onlyOneShow(id){
+        var arr = ['parentCode','gameUserId','phoneNum','verifyCodemb','password','confirmPassword','verifyCode','confirmPassword'];
+        $.each(arr,function(index,ele){
+            if(id != ele){
+                $('#'+ele+'_error_msg').html('');
+            }
+        })
+    }
+
+
+
+
+</script>

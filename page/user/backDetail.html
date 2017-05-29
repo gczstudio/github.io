@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>结算详情</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+<style type="text/css">
+    a {
+        color: #323232;
+        display: block;
+    }
+
+    .balance { background-color: #eee; height: 60px; padding-top: 20px; padding-left: 5%; font-size: 14px; margin-bottom: 10px; }
+    .row{margin: 0;}
+    .list-group {
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
+    .list-group-item {
+        height: 60px;
+        padding-top: 15px;
+    }
+    .list-group-item span:first-child {
+        float: left;
+        padding-right: 10px;
+        padding-top: 5px;
+        color: #F99979;
+    }
+    .list-group-item span:last-child {
+        float: right;
+        padding-top: 5px;
+        color: #c6c6c6;
+    }
+    .list-group-item content {
+        font-size: 16px;
+        color: black;
+    }
+    .right {
+        float: right;
+    }
+</style>
+</head>
+<body>
+    
+    <header>
+        <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+        <span class="title">结算详情</span>
+        <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
+    </header><div class="row balance">
+    <b>20170501 - 20170507</b>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item"><content>收款信息</content></li>
+        <li class="list-group-item"><content>结算总金额</content><content class="right">548.4</content></li>
+        <li class="list-group-item"><content>交易状态</content><content class="right">已打款</content></li>
+        <li class="list-group-item"><content>收款人</content><content class="right">蒋文龙</content></li>
+        <li class="list-group-item"><content>收款账户</content><content class="right">农业银行全州县绍水支</content></li>
+        <li class="list-group-item"><content>打款时间</content><content class="right">2017-05-12</content></li>
+    </ul>
+    <hr/>
+    <ul class="list-group"><li class="list-group-item">代理&玩家金额</li></ul>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="./balanceList.html">
+                <content>代理提成</content>
+                <span style="float: right;">337.80<i class="glyphicon glyphicon-menu-right"></i></span>
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="./balanceList.html">
+                <content>玩家提成</content>
+                <span style="float: right;">210.60<i class="glyphicon glyphicon-menu-right"></i></span>
+            </a>
+        </li>
+    </ul>
+    <br/>
+    <ul class="list-group"><li class="list-group-item">活动奖励金额</li></ul>
+    <ul class="list-group">
+        <li class="list-group-item"><content>首充奖励</content><content style="float: right;">0.00</content></li>
+        <li class="list-group-item"><content>充5返5</content><content style="float: right;">0.00</content></li>
+        <li class="list-group-item"><content>满9000返500</content><content style="float: right;">0.00</content></li>
+    </ul>
+   
+</body>
+</html>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>

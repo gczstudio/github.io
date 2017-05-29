@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>首页</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        html,body {height: 100%;}
+        .box {margin: 0 auto;position: relative;width: 100%;height: 100%;background-color: #ddd;}
+        .login-box { width: 100%; max-width:500px; height: 400px; position: absolute; top: 40%;margin-top: -200px; }
+        @media screen and (min-width:500px){
+            .login-box {
+                left: 50%;
+                margin-left: -250px;
+            }
+        }
+        .form {width: 100%;max-width:500px;margin: 25px auto 0px auto;}
+        .login-content {width: 100%;max-width:500px;background-color: rgba(255, 250, 2550, .6);float: left;}
+        .input-group {margin: 0px 0px 0px 0px !important;}
+        .form-control,.input-group {height: 40px;}
+        .form-group {margin-bottom: 0px !important;padding-bottom: 20px;}
+        .login-title {padding: 20px 10px;background-color: #31b0d5;}
+        .login-title h1 {margin-top: 10px !important;}
+        .login-title small {color: #fff;}
+        .link p {line-height: 20px;margin-top: 30px;}
+        .btn-sm {padding: 8px 24px !important;font-size: 16px !important;}
+        .tips { font-size: 14px; color: red; height: 30px; width: 100%;text-align: center;}
+        #register-form{width: 100%;}
+        .form-control{width: 63%;   display: inline-block;}
+        .form-group{height: 60px;}
+        .form-group label{line-height: 40px;text-align: center;}
+
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div class="login-box">
+        <div class="login-title text-center">
+            <h1><small>小吆分销系统</small></h1>
+        </div>
+
+        <div class="login-content ">
+            <div class="form">
+<!--                 <form id="register-form" action="/passport/register" method="post"> -->
+                    
+                    <div class="form-group">
+                        <label for="gameId" class="col-xs-4">ID</label>
+                        <input type="text" class="col-xs-8 form-control" id="gameId" placeholder="ID">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phoneNum" class="col-xs-4">手机</label>
+                        <input type="text" class="col-xs-8 form-control" id="phoneNum" placeholder="手机号">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="verifyCode" class="col-xs-4">校验码</label>
+                        <div class="col-xs-8 input-group" style="width: 63%;">
+                          <input type="text" id="verifyCode" class="form-control" placeholder="验证码" aria-describedby="basic-addon2">
+                          <a class="input-group-addon" id="basic-addon2">校验码</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messageCode" class="col-xs-4">短信验证码</label>
+                        <div class="col-xs-8 input-group" style="width: 63%;">
+                          <input type="text" id="messageCode" class="form-control" placeholder="短信验证码" aria-describedby="basic-addon2">
+                          <a class="input-group-addon btnSendCode" id="basic-addon2" onclick="sendMessage()">获取验证码</a>
+                        </div>
+                    </div>
+                    <div class="tips">
+                        <span id="error_msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <div class="input-group" style="width: 100%">
+                            <input type="button" id="btnNext" class="btn btn-sm btn-info" value="下一步" style="width: 100%" ">
+                            </div>
+                        </div>
+                    </div>
+                    
+                <!-- </form> -->
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    
+    $('#btnNext').click(function(){
+        var gameId = $('#gameId').val();
+        var phoneNum = $('#phoneNum').val();
+        var messageCode = $('#messageCode').val();
+        if(gameId == ''){
+            $('#error_msg').html('请输入ID');
+            $('#gameId').focus();
+            return;
+         }
+         $('#error_msg').html('');
+         if(!checkPhoneNum(phoneNum)) return;
+         if(messageCode == ''){
+            $('#error_msg').html('短信验证码不能为空');
+            $('#messageCode').focus();
+            return;
+         }
+         $('#error_msg').html('');
+
+
+    })
+
+
+    //验证手机号
+    function checkPhoneNum(phoneNum){
+        if(phoneNum == ''){
+            $('#error_msg').html('手机号不能为空');
+            $('#phoneNum').focus();
+            return false;
+        }
+
+        if(!(/^1[34578]\d{9}$/.test(phoneNum))){
+            $('#error_msg').html('请输入正确的手机号');
+            $('#phoneNum').focus();
+            return false;
+        }
+        $('#error_msg').html('');
+        return true;
+    }
+
+    //发送验证码
+    var isClick = true;
+    function sendMessage(){
+
+        if(!isClick) return;
+
+        var phoneNum = $('#phoneNum').val();
+        var verifyCode = $('#verifyCode').val();
+        if(!checkPhoneNum(phoneNum)) return;
+        if(verifyCode == ''){
+            $('#error_msg').html('图形验证码不能为空');
+            $('#verifyCode').focus();
+            return;
+        }
+        $('#error_msg').html('');
+
+
+        $('#error_msg').html('短信验证码已发送至您的手机，请注意查收！')
+        var currTime = 60;
+        var time = null;
+        time = setInterval(function(){
+            isClick = false;
+            currTime--;
+            $('.btnSendCode').html('倒计时'+(currTime>=10?currTime:'0'+currTime.toString())+'s');
+            if(currTime<=0){
+                isClick = true;
+                $('.btnSendCode').html('重新获取');
+                $('#error_msg').html('');
+                clearInterval(time);
+            }
+        },1000)
+
+        
+
+        // $.ajax('xxx',{},function(){
+        //     //请求验证码接口
+        //     if(data.code == 0){
+
+        //     }
+        // })
+
+    }
+
+
+</script>

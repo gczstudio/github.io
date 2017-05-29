@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>个人资料</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <style type="text/css">
+        a {
+            color: #323232;
+            display: block;
+        }
+        label {
+            padding-top: 5px;
+        }
+        .btn-primary {
+            color: #000;
+            background-color: #9CE6CD;
+            border-color: #fff;
+        }
+        .avatarInputSpan {
+            position: relative;
+        }
+        .avatarInput {
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: -54px;
+            width: 52px;
+            height: 52px;
+            overflow: hidden;
+            filter: alpha(opacity:0);
+            opacity: 0;
+        }
+        .form-horizontal .form-group{margin: 0 0 15px;}
+        .btn-block{margin-bottom: 15px;}
+    </style>
+</head>
+<body>
+    
+<header>
+    <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+    <span class="title">个人资料</span>
+    <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
+</header>
+<section id="wrapper">
+    <div class="form-group" style="height: 90px;">
+        <div class="col-xs-2">
+
+        </div>
+        <div class="col-xs-6">
+            <img id="avatarImg" src="../../image/tx.jpg" width="80" height="80" />
+            <iframe name="upFrame" scrolling="no" src="about:blank" style="display: none;"></iframe>
+            <form id="pageForm" action="http://fx.jinkagame.com/image/avatar" method="post" target="upFrame" enctype="multipart/form-data">
+                <input type="hidden" name="_csrf" value="Wm12S2ZTaXMMGkMIEBsuJwMLAz0XIjEDORcYBlYDHisoXCYdPiFaQQ==">
+                <span class="avatarInputSpan" style="margin-right: 0;"><input type="file" name="avatar" id="avatar" class="avatarInput"></span>
+            </form>
+        </div>
+        <div class="col-xs-4">
+
+        </div>
+    </div>
+    <form id="edit-profile-form" class="form-horizontal" action="/user/edit-profile" method="post">
+        <input type="hidden" name="_csrf" value="Wm12S2ZTaXMMGkMIEBsuJwMLAz0XIjEDORcYBlYDHisoXCYdPiFaQQ==">
+        <input type="hidden" name="User[avatar]" value="20170319615991123.jpg">
+        <input type="hidden" name="UserProfile[user_id]" value="11194">
+        <div class="form-group">
+            <label for="nick_name" class="col-xs-4 control-label">昵称：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="nick_name" placeholder="昵称" name="User[nick_name]" value="天蝎座">
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="real_name" class="col-xs-4 control-label">真实姓名：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="real_name" placeholder="真实姓名" name="UserProfile[real_name]" value="蒋文龙">
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="wx_account" class="col-xs-4 control-label">微信号：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="wx_account" placeholder="微信号" name="UserProfile[wx_account]" value="jwen1008">
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="phone" class="col-xs-4 control-label">手机：</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" id="phone" placeholder="手机" name="User[phone]" value="13507836506">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="province" class="col-xs-4 control-label">省份：</label>
+            <div class="col-xs-8">
+                <select class="form-control" name="UserProfile[province]" id="province">
+                </select>
+            </div>
+        </div>
+         <div class="form-group">
+            <label for="province" class="col-xs-4 control-label">城市：</label>
+            <div class="col-xs-8">
+                <select class="form-control" name="UserProfile[city]" id="city">
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="area" class="col-xs-4 control-label">地区：</label>
+            <div class="col-xs-8">
+                <select class="form-control" name="UserProfile[area]" id="area">
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthday" class="col-xs-4 control-label">出生日期：</label>
+            <div class="col-xs-3" style="width: 26%; padding-right: 0;">
+                <select class="form-control" id="year">
+                </select>
+            </div>
+            <div class="col-xs-3" style="width: 18%; padding-left: 0px; padding-right: 1px;">
+                <select class="form-control" id="month">
+                </select>
+            </div>
+            <div class="col-xs-2" style="width: 22%; padding-left: 0;">
+                <select class="form-control" id="day">
+                </select>
+            </div>
+            <input type="hidden" name="UserProfile[birthday]" id="birthday" value="00000">
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-xs-4 control-label">邮箱：</label>
+            <div class="col-xs-8">
+                <input type="email" class="form-control" id="email" placeholder="请输入邮箱" name="User[email]" value="">
+            </div>
+        </div>
+    </form>
+    <div id="footer">
+        <div class="form-group">
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-info btn-lg btn-block" id="btnSubmitEditProfile">提交</button>
+            </div>
+        </div>
+    </div>
+</section>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/date_picker.js"></script>
+
+    <!-- <script type="text/javascript" src="../../js/edit_profile.js"></script> -->
+<script type="text/javascript">
+    $(function(){
+        $.ms_DatePicker({
+        YearSelector: "#year",
+        MonthSelector: "#month",
+        DaySelector: "#day"
+    });
+    })
+    var province = "0";
+    var city = "0";
+    var area = "0";
+    var birthday = "00000";
+
+    // getProvinces(province);
+    // if (city) {
+    //     getCitys(city, province);
+    //     if (area) {
+    //         getAreas(area, city);
+    //     }
+    // }
+
+    if (birthday) {
+        year = birthday.substr(0, 4);
+        month = birthday.substr(4, 2);
+        day = birthday.substr(6,2);
+        $('#year').attr('rel', year);
+        $('#month').attr('rel', month);
+        $('#day').attr('rel', day);
+    }
+</script>
+</body>
+</html>

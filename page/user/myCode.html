@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>我的二维码</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <style type="text/css">
+        .row{margin: 0;}
+        .content { background-color: #eee; height: 40px; padding-top: 10px; padding-left: 5px; font-size: 16px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    
+<header>
+    <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+    <!--<a style="" href="http://fx.jinkagame.com/"><span class="glyphicon glyphicon-menu-left"></span></a>-->
+    <span class="title">我的二维码</span>
+    <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
+</header><section id="wrapper">
+    <div class="row content">
+        <div class="col-xs-12"><p>我的游戏ID：413313</p></div>
+    </div>
+    <div class="row" style="padding-left: 10%;padding-top: 20px; font-size: 16px;">
+        <p>当用户下载游戏并输入您的邀请码时，将免费获赠5张房卡</p>
+        <p>它可以：</p>
+        <p>1、为好友提供5张免费房卡</p>
+        <p>2、帮助您更快的招到代理或玩家</p>
+    </div>
+    <!--<div class="row navbar-fixed-bottom" style="margin-bottom: 40px;">-->
+        <!--<div class="col-xs-12">-->
+            <!--<button type="button" class="btn btn-primary btn-lg btn-block" id="btnExpand">生成专属推广</button>-->
+        <!--</div>-->
+    <!--</div>-->
+</section>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a082ac9df139e9d453ede331edeaa3f7";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script type="text/javascript">
+    $('#btnExpand').on('click', function() {
+        window.location.href = '/user/expand';
+    })
+</script>
+</body>
+</html>

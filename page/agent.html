@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>下级代理授权</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+        <style type="text/css">
+        label {
+            padding-top: 5px;
+        }
+
+        #footer {
+            padding-top: 100px;
+        }
+        #btnSubmitAuth{width: 100%;}
+        .form-horizontal .form-group{margin: 0 0 15px 0;}
+    </style>
+</head>
+<body>
+    
+    <header>
+        <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+        <span class="title">下级代理授权</span>
+        <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
+    </header>
+    <section id="wrapper">
+        <form id="proxy-auth-form" class="form-horizontal" action="/distribution/auth" method="post">
+            <div class="form-group">
+                <label for="game_id" class="col-xs-4 control-label">代理ID：</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" id="game_id" placeholder="下级代理游戏ID" name="game_id">
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="level" class="col-xs-4 control-label">授权等级：</label>
+                <div class="col-xs-6" >
+                    <select class="form-control" name="level" id="level" ">
+                                            <option value="3">小咖二级</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row tips" style="display: block;">
+                <span></span>
+            </div>
+        </form>
+        <div id="footer">
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-lg btn-info" id="btnSubmitAuth">确定</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>

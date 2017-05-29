@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>充值查询</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/mobiscroll.2.13.2.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+
+
+<style type="text/css">
+    a {
+        color: #323232;
+        display: block;
+    }
+    .balance { background-color: #eee; height: 60px; padding-top: 20px; padding-left: 5%; font-size: 14px; margin-bottom: 10px; }
+    .balance input {padding-left: 10px;}
+    .row{margin: 0;}
+    .list-group {
+        margin-bottom: 0px;
+        font-size: 20px;
+    }
+    .list-group a{text-decoration: underline;}
+    .list-group-item {
+        height: 60px;
+        padding-top: 15px;
+    }
+    .list-group-item span:first-child {
+        float: left;
+        padding-right: 10px;
+        padding-top: 5px;
+        color: #F99979;
+    }
+    .list-group-item span:last-child {
+        float: right;
+        padding-top: 5px;
+        color: #c6c6c6;
+    }
+    .list-group-item content {
+        font-size: 20px;
+        color: black;
+    }
+
+</style>
+</head>
+<body>
+    
+    <header>
+        <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+        <span class="title">充值查询</span>
+        <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
+    </header>
+    <div class="row balance" style="height:100px;">
+        <form action="/distribution/account/query" method="GET">
+            <input type="text" id="quid" name="quid" style="width: 40%;" placeholder="玩家或代理id"  value=""><br><br>
+            <input type="text" id="start_time" name="start_time" style="width: 40%;" placeholder="开始时间" value="">
+            <input type="text" id="end_time" name="end_time" style="width: 40%;" placeholder="结束时间" value="">
+            <input type="submit" name="submit" value="查询">
+        </form>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item"><content>总充值：￥ 37314 </content></li>
+            <li class="list-group-item show_next"><content><a href="./rechargeDetail.html">我的玩家充值：￥ 11838 </a></content></li>
+            <li class="list-group-item show_next"><content><a href="./rechargeDetail.html">我的代理玩家充值：￥ 25476 </a></content></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/mobiscroll.2.13.2.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript">
+     $(function () {
+        var curr = new Date().getFullYear();
+        var opt={};
+        opt.date = {preset : 'date'};
+        opt.datetime = {preset : 'datetime'};
+        opt.time = {preset : 'time'};
+
+        opt.default = {
+            theme: 'android-holo light', //皮肤样式
+            display: 'modal', //显示方式 
+            mode: 'scroller', //日期选择模式
+            dateFormat: 'yyyy-mm-dd',
+            lang: 'zh',
+            showNow: true,
+            nowText: "今天",
+            stepMinute: 5,
+            startYear: curr - 20, //开始年份
+            endYear: curr + 20 //结束年份
+        };
+
+        $('#start_time').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+        $('#end_time').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+
+    });
+</script>
