@@ -44,36 +44,13 @@
         </li>
     </ul>
 </section>
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
-<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../js/common.js"></script>
 
-<script type="text/javascript">
-    $('#btnWithdraw').on('click', function() {
-        //window.location.href = "http://fx.jinkagame.com/distribution/user/balance-explain";
-        window.location.href = "http://fx.jinkagame.com/distribution/account/index";
-    })
-
-    var account = "";
-    if (account == '0') {
-        $('#myModal').modal('show');
-    }
-    $('#cancel').on('click', function() {
-        $('#myModal').modal('hide');
-    })
-    $('#bind').on('click', function() {
-        window.location.href = '/distribution/account/add';
-    })
-
-//
-//    $('.card').find('div').on('click', function(){
-//        $(this).addClass('act').siblings().removeClass('act');
-//        $(this).find('input[type=radio]').prop("checked", true);
-//    }).eq(0).trigger('click');
-//
-//    $('.payway li').find('p').on('click', function() {
-//        window.location.href = createBalanceListUrl($(this).attr('type'));
-//    })
-</script>
 </body>
 </html>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $('#header_nav').on('click', function() {
+        window.location.href = '../../index.html';
+    })
+</script>
