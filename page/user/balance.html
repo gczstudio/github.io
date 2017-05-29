@@ -15,8 +15,8 @@
 
     .balance { background-color: #eee; height: 140px; padding-top: 20px; padding-left: 5%; font-size: 20px; margin-bottom: 10px; }
 
-    .list-group li { height: 40px; border-bottom: 1px solid #ccc; font-size: 16px; }
-    .list-group li p { margin-left: 5%; padding-top: 10px; }
+    .list-group li { height: 40px; border-bottom: 1px solid #ccc; font-size: 14px; }
+    .list-group li p { margin-left: 5%; line-height: 40px; }
     .list-group li p span { float: right; padding-right: 5%; }
 </style>
 </head>
@@ -25,7 +25,7 @@
 <header>
     <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
     <span class="title">账户信息</span>
-    <span class="glyphicon glyphicon-home" id="header_nav"></span>
+    <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
 </header>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" style="padding-top: 20%;">
@@ -65,35 +65,35 @@
         <p style="font-size: 12px; width: 95%;">总金额=代理提成+我直接销售的玉提成+活动首充赠送+超值礼包奖励+500元分销红包<br>注：平台赠送金额在充值满9000时可返现，未满足则不计算到总额里</p>
     </div>
     <ul class="list-group payway">
-                <li>
-            <p type="1">代理提成<span style="display: inline;">￥1703.10</span></p>
-        </li>
-                <li>
-            <p type="2">我直接销售的玉提成<span style="display: inline;">￥5267.70</span></p>
+        <li>
+            <p type="1">代理提成<span>￥1703.10</span></p>
         </li>
         <li>
-            <p type="2">平台赠送金额<span style="display: inline;">￥500.00[已打款]</span></p>
+            <p type="2">我直接销售的玉提成<span>￥5267.70</span></p>
         </li>
         <li>
-            <p type="2">活动期间发展玩家首充赠送金额<span style="display: inline;">￥0</span></p>
+            <p type="2">平台赠送金额<span>￥500.00[已打款]</span></p>
         </li>
         <li>
-            <p type="2">每日超值礼包连续7日全额奖励活动<span style="display: inline;">￥0</span></p>
+            <p type="2">活动期间发展玩家首充赠送金额<span>￥0</span></p>
         </li>
         <li>
-            <p type="2">500元分销红包<span style="display: inline;">￥500</span></p>
+            <p type="2">每日超值礼包连续7日全额奖励活动<span>￥0</span></p>
         </li>
         <li>
-            <p type="2">今日提成<span style="display: inline;">￥29.40</span></p>
+            <p type="2">500元分销红包<span>￥500</span></p>
         </li>
         <li>
-            <p type="2">上周提成金额<span style="display: inline;">￥685.2</span></p>
+            <p type="2">今日提成<span>￥29.40</span></p>
         </li>
         <li>
-            <p type="2">上周打款金额（满100元起发）<span style="display: inline;">￥685.2</span></p>
+            <p type="2">上周提成金额<span>￥685.2</span></p>
         </li>
         <li>
-            <p type="2">总打款金额<span style="display: inline;">￥6680.9</span></p>
+            <p type="2">上周打款金额（满100元起发）<span>￥685.2</span></p>
+        </li>
+        <li>
+            <p type="2">总打款金额<span>￥6680.9</span></p>
         </li>
     </ul>
     </form>
@@ -108,6 +108,7 @@
 </section>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
 <script type="text/javascript">
     $('#btnWithdraw').on('click', function() {
 
@@ -125,10 +126,6 @@
     $('#bind').on('click', function() {
         window.location.href = '/distribution/account/add';
     });
-
-    $('#header_nav').on('click', function() {
-        window.location.href = '../../index.html';
-    })
 
 
 </script>
