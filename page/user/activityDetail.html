@@ -24,50 +24,49 @@
 </head>
 <body>
     
-<header>
-    <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
-    <!--<a style="" href="http://fx.jinkagame.com/"><span class="glyphicon glyphicon-menu-left"></span></a>-->
-    <span class="title">500元分销红包</span>
-    <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
-</header><section id="wrapper">
-    <form id="proxy-auth-form" class="form-horizontal" action="/distribution/user/giving500?time=1" method="post">
-<input type="hidden" name="_csrf" value="Wk4uUGZGb3QMORsTEA4oIAMoWyYXNzcEOTRAHVYWGCwof34GPjRcRg==">
-        <div class="form-group">
-            <label for="game_id" class="col-xs-4 control-label">活动时间：</label>
-            <div class="col-xs-8">
-                长期有效
+    <header>
+        <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+        <span class="title">500元分销红包</span>
+        <span class="glyphicon glyphicon-home" id="header_nav"></span>
+    </header>
+    <section id="wrapper">
+        <form id="proxy-auth-form" class="form-horizontal" action="/distribution/user/giving500?time=1" method="post">
+            <input type="hidden" name="_csrf" value="Wk4uUGZGb3QMORsTEA4oIAMoWyYXNzcEOTRAHVYWGCwof34GPjRcRg==">
+            <div class="form-group">
+                <label for="game_id" class="col-xs-4 control-label">活动时间：</label>
+                <div class="col-xs-8">
+                    长期有效
+                </div>
             </div>
-        </div>
-    <div class="form-group">
-        <label for="game_id" class="col-xs-4 control-label">活动说明：</label>
-        <div class="col-xs-8">
-            代理直接销售业绩达到9000元
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="game_id" class="col-xs-4 control-label">我的奖励：</label>
-        <div class="col-xs-8">
-            500 元[已打款]
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="game_id" class="col-xs-4 control-label">活动进度：</label>
-        <div class="col-xs-8">
-            累计充值 11838.00 元
-        </div>
-    </div>
+            <div class="form-group">
+                <label for="game_id" class="col-xs-4 control-label">活动说明：</label>
+                <div class="col-xs-8">
+                    代理直接销售业绩达到9000元
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="game_id" class="col-xs-4 control-label">我的奖励：</label>
+                <div class="col-xs-8">
+                    500 元[已打款]
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="game_id" class="col-xs-4 control-label">活动进度：</label>
+                <div class="col-xs-8">
+                    累计充值 11838.00 元
+                </div>
+            </div>
 
-        <div class="row tips" style="display: block;">
-            <span></span>
-        </div>
-    </form>
+                <div class="row tips" style="display: block;">
+                    <span></span>
+                </div>
+        </form>
 
-</section>
+    </section>
    
 </body>
 </html>
  <script type="text/javascript" src="../../js/jquery.min.js"></script>
-<script type="text/javascript" src="../../js/common.js"></script>
 <script type="text/javascript">
     $('#header_nav').on('click', function() {
         window.location.href = '../../index.html';

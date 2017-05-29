@@ -22,47 +22,47 @@
 </head>
 <body>
     
-<header>
-    <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
-    <!--<a style="" href="http://fx.jinkagame.com/"><span class="glyphicon glyphicon-menu-left"></span></a>-->
-    <span class="title">修改密码</span>
-    <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
-</header><section>
-    <form id="edit-pwd-form" class="form-horizontal" action="/user/edit-pwd" method="post">
-<input type="hidden" name="_csrf" value="Q09jOV9rdzYVOFZ6KSMwYhopFk8uGi9GIDUNdG87AG4xfjNvBxlEBA==">
-    <div class="form-group">
-        <label for="oldPwd" class="col-xs-3 control-label">原密码：</label>
-        <div class="col-xs-9">
-            <input type="email" class="form-control" id="oldPwd" placeholder="请输入原密码" name="oldPwd">
+    <header>
+        <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+        <span class="title">修改密码</span>
+        <span class="glyphicon glyphicon-home" id="header_nav"></span>
+    </header>
+    <section>
+        <form id="edit-pwd-form" class="form-horizontal" action="/user/edit-pwd" method="post">
+            <input type="hidden" name="_csrf" value="Q09jOV9rdzYVOFZ6KSMwYhopFk8uGi9GIDUNdG87AG4xfjNvBxlEBA==">
+            <div class="form-group">
+                <label for="oldPwd" class="col-xs-3 control-label">原密码：</label>
+                <div class="col-xs-9">
+                    <input type="email" class="form-control" id="oldPwd" placeholder="请输入原密码" name="oldPwd">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newPwd" class="col-xs-3 control-label">新密码：</label>
+                <div class="col-xs-9">
+                    <input type="password" class="form-control" id="newPwd" placeholder="请输入新密码" name="newPwd">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="repeatPwd" class="col-xs-3 control-label">确认密码：</label>
+                <div class="col-xs-9">
+                    <input type="password" class="form-control" id="repeatPwd" placeholder="请再次输入新密码" name="repeatPwd">
+                </div>
+            </div>
+            <div class="error-message orange" style="display: none;" id="dd_error_msg"></div>
+        </form>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-info btn-lg btn-block" id="btnSubmitEditPwd">提交</button>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="newPwd" class="col-xs-3 control-label">新密码：</label>
-        <div class="col-xs-9">
-            <input type="password" class="form-control" id="newPwd" placeholder="请输入新密码" name="newPwd">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="repeatPwd" class="col-xs-3 control-label">确认密码：</label>
-        <div class="col-xs-9">
-            <input type="password" class="form-control" id="repeatPwd" placeholder="请再次输入新密码" name="repeatPwd">
-        </div>
-    </div>
-    <div class="error-message orange" style="display: none;" id="dd_error_msg"></div>
-    </form>
-    <div class="form-group">
-        <div class="col-xs-12">
-            <button type="button" class="btn btn-info btn-lg btn-block" id="btnSubmitEditPwd">提交</button>
-        </div>
-    </div>
-</section>
+    </section>
 
-    <script type="text/javascript" src="../../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/common.js"></script>
-    <script type="text/javascript">
-        $('#header_nav').on('click', function() {
-            window.location.href = '../../index.html';
-        })
-    </script>
+   
 </body>
 </html>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#header_nav').on('click', function() {
+        window.location.href = '../../index.html';
+    })
+</script>

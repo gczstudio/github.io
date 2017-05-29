@@ -46,3 +46,5 @@ section {
 .sendmessage{ 
     margin-top: 20px;
 }
+
+#header_nav{float: right;padding-top: 10px;color: #fff; cursor: pointer;}

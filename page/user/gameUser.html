@@ -42,7 +42,7 @@
     <header>
         <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
         <span class="title">我的玩家</span>
-        <span class="glyphicon glyphicon-home" style="float: right;padding-top: 10px;color: #fff;" id="header_nav"></span>
+        <span class="glyphicon glyphicon-home" id="header_nav"></span>
     </header>
     <div class="row">
         <input type="hidden" id="hidPage" value="1">
@@ -75,8 +75,7 @@
  
 </body>
 </html>
- <script type="text/javascript" src="../../js/jquery.min.js"></script>
-<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript">
     $('#header_nav').on('click', function() {
         window.location.href = '../../index.html';
