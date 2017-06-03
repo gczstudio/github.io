@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>消息详情</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <style type="text/css">
+        .row {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        .row .nav {
+            text-align:center;
+            padding-right:0px;
+            padding-top: 15px;
+            border-bottom: solid 1px black;
+            border-right: solid 1px black;
+            height: 50px;
+        }
+        .btn-default {
+            padding: 5px;
+        }
+        .list {
+            border-bottom: solid 1px grey;
+            padding-bottom: 5px;
+            padding-top: 10px;
+        }
+        .list div {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .list .btn-default {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    
+<header>
+    <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+    <span class="title">消息详情</span>
+    <span class="glyphicon glyphicon-home" id="header_nav"></span>
+</header>
+<div class="row">
+    <div class="col-xs-12">
+        您好，您的 20170522-20170528 的收入已结算，请注意查收
+    </div>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $('#header_nav').on('click', function() {
+        window.location.href = '../../index.html';
+    })
+</script>

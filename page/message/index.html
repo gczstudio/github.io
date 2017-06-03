@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>我的消息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <style type="text/css">
+        .row {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        .row .nav {
+            text-align:center;
+            padding-right:0px;
+            padding-top: 15px;
+            border-bottom: solid 1px #E8E8E8;
+            border-right: solid 1px #E8E8E8;
+            height: 50px;
+        }
+        .row .show {
+            height: 5px;
+        }
+        .row .active {
+            background-color: #41C7DB;
+            border-bottom: solid 1px #41C7DB;
+        }
+        .btn-default {
+            padding: 5px;
+        }
+        .list {
+            border-bottom: solid 1px #ddd;
+            padding-bottom: 5px;
+            padding-top: 10px;
+        }
+        .list div {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .list .btn-default {
+            font-size: 12px;
+        }
+        .sys_msg{ overflow: hidden;text-overflow: ellipsis;white-space: nowrap; }
+    </style>
+</head>
+<body>
+    
+<header>
+    <a style="float: left;" href="javascript:history.go(-1);"><span class="glyphicon glyphicon-menu-left"></span></a>
+    <span class="title">我的消息</span>
+    <span class="glyphicon glyphicon-home" id="header_nav"></span>
+</header>
+<div class="row">
+    <input type="hidden" id="hidPage" value="1">
+    <input type="hidden" id="status" value="all">
+    <div class="col-xs-4 nav" status="all">
+        <p>全部</p>
+        <div class="show active"></div>
+    </div>
+    <div class="col-xs-4 nav" status="0">
+        <p>未读</p>
+        <div class="show"></div>
+    </div>
+    <div class="col-xs-4 nav" status="1" style="border-right: none;">
+        <p>已读</p>
+        <div class="show"></div>
+    </div>
+</div>
+<section id="list">
+    <div class="row list" value="4140">
+        <div class="col-xs-8 sys_msg">【系统消息】您好，您的 20170522-20170528 的收入已结算，请注意查收!</div>
+        <div class="col-xs-4" style="text-align: right;">2017-06-01</div>
+    </div>
+</section>
+<div id="divMessageLoading" class="loading" style="display: none;">
+    <b></b>正在加载
+</div>
+<div class="load_more" id="btnLoadMore" style="display: none;">
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    //tab栏切换
+    $('.nav').click(function(){
+        $(this).children('.show').addClass('active').end().siblings('.nav').children('.show').removeClass('active');
+    })
+
+    //跳到详情页
+    $('.list').click(function(){
+        window.location.href = './detail.html';
+    })
+
+    //跳到首页
+    $('#header_nav').on('click', function() {
+        window.location.href = '../../index.html';
+    })
+</script>
